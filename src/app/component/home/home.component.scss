@@ -1,0 +1,109 @@
+.component {
+    // border: 1px solid red;
+    height: 100%;
+    width: 100%;
+   // background-color: #807F7F;
+   background-image: url("../../../assets/Background3.jpg");
+   background-size: cover;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+   
+    
+    
+}
+.image{
+   // border: 1px solid red;
+    position: relative;
+    bottom: 77px;
+}
+h1{
+    //border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    height: 70px;
+    font-size: 33px;
+line-height: 61px;
+letter-spacing: 0.131em;
+font-weight: 600;
+}
+
+.form-head {
+   // border: 1px solid rgb(221, 19, 120);
+    width: 50%;
+    height: 405px;
+    position: relative;
+    margin-left: 27%;
+    margin-top: -15px;
+    background: #fff;
+    background: transparent;
+    padding: 5px;
+    border-radius: 10px;
+  //  margin-right: 400px;
+    box-shadow:  5px 15px #00000029;
+     border: 2px solid #e4e4e4;
+     
+    border-radius: 6px;
+    opacity: 1;
+   
+    
+
+
+}
+
+.form-box {
+    // border: 1px solid red;
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    margin-left: 74px;
+    border-radius: 3px;
+}
+
+.toggle-btn {
+    border: 1px solid black;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-left: 55px;
+    margin-top: 20px;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+
+}
+.online {
+    // border: 2px solid green;
+    width: 230px;
+    height: 230px;
+    border-radius: 70%;
+    margin-top: 30px;
+    margin-left: -8px;
+}
+
+//Employee
+.forthdiv{
+    //border: 1px solid red;
+    margin-left: 375px;
+    width: 49.6%;
+    position: relative;
+    bottom: 340px;
+}
+.onlineclass{
+   // border: 1px solid yellow;
+    height: 245px;
+}
+.toggle-btna {
+    border: 1px solid black;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-left: 70px;
+    margin-top: 15px;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+    
+
+}
+
+

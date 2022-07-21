@@ -1,0 +1,214 @@
+.component{
+    height: 100%;
+    width: 100%;
+    background-color: #807F7F;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-head{
+    width: 370px;
+    height: 405px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 350px;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+}
+.form-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    margin-left: 74px;
+    border-radius: 3px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+}
+.control{
+   // border: 1px solid red;
+    font-size: 31px;
+    line-height: 45px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    font-style: normal;
+    margin-left: 50px;
+    margin-top: -20px;
+}
+.blue{
+    color: blue;
+}
+.red{
+    color: red;
+}
+.orange{
+    color: orange;
+}
+.green{
+    color: green;
+}
+.pink{
+    color:rgb(46, 228, 252);
+}
+.log p{
+   // border: 1px solid palevioletred;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0.100em;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.input-group{
+    top: 190px;
+    position: absolute;
+    width: 480px;
+    transition: -5s;
+    margin-top: -72px;
+    margin-left: 38px;
+}
+.type {
+    margin-left: -30px;
+    margin-bottom: 15px;
+}
+mat-radio-button{
+    margin-right: 20px;
+}
+.form label{
+    display: flex;
+}
+.input-field{
+   width: 60%;
+   padding: 10px 0;
+   margin: 8px 0;
+}
+.submit-btn{
+    width: 61%;
+    padding: 10px 0;
+    margin: 8px 0;
+    cursor: pointer;
+    border: none;
+    background-color: #A03037;
+    color: white;
+    font-size: 15px;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: #BFBDBD;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    
+}
+.header{
+   // border: 1px solid red;
+    width: 300px;
+    height: 350px;
+    margin-top: -477px;
+    margin-left: 340px;
+    background: #F5F5F5;
+    padding: 5px;
+    border-radius: 21px;
+    opacity: 1;
+    background-color: rgba(245, 245, 245, 0.893);
+}
+.img-box{
+    width: 220px;
+    height: 350px;
+    margin: 35px auto;
+    position: relative;
+    margin-left: 74px;
+    border-radius: 3px;
+}
+.online{
+    width: 230px;
+    height: 230px;
+    border-radius: 70%; 
+    margin-top: 30px;
+    margin-left: -40px;    
+}
+.text-online{
+    display: flex;
+    margin-top: 15px;
+    margin-left: -18px;
+    text-align: center;
+    font-size: 17px;
+}
+.choose-btn{
+    display: flex;
+    margin-top: 38px;
+}
+.facebook-btn{
+top: 507px;
+left: 727px;
+width: 140px;
+height: 37px;
+background: #4266B2;
+border: 1px solid white;
+border-radius: 3px;
+opacity: 1;
+color: white;
+}
+.google{
+top: 507px;
+left: 800px;
+width: 140px;
+height: 37px;
+
+background: #F5F5F5;
+border: 1px solid #E4E4E4;
+border-radius: 3px;
+opacity: 1;
+margin-left: 10px;
+}
+.text{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 135px;
+    font: normal normal bold 14px/18px Meiryo UI;
+    color: #343434;
+    opacity: 1;
+}
+h2 {
+    font-family: sans-serif;
+    margin: 10px auto;
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    max-width: 300px;
+    position: relative;
+    margin-right: 178px;
+  }
+  h2:before {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 3px;
+    background: #191970;
+    left: 0;
+    top: 50%;
+    position: absolute;
+  }
+  h2:after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 3px;
+    background: #191970;
+    right: 0;
+    top: 50%;
+    position: absolute;
+  }
