@@ -1,12 +1,11 @@
 .component {
-    // border: 1px solid red;
-    height: 100%;
+    //border: 1px solid red;
+    height: 100vh;
     width: 100%;
    // background-color: #807F7F;
-   background-image: url("../../../assets/Background3.jpg");
+   background-image: url("../../../assets/Background10.jpg");
    background-size: cover;
     background-position: center;
-    background-size: cover;
     position: absolute;
    
     
@@ -21,12 +20,29 @@ h1{
     //border: 1px solid red;
     display: flex;
     justify-content: center;
-    background-color: blue;
+    background-color:greenyellow;
+    color:black;
     height: 70px;
     font-size: 33px;
-line-height: 61px;
-letter-spacing: 0.131em;
-font-weight: 600;
+    line-height: 61px;
+    letter-spacing: 0.131em;
+    font-weight: 600;
+
+}
+.blue{
+    color: palevioletred;
+}
+.red{
+    color: red;
+}
+.orange{
+    color: orange;
+}
+.green{
+    color: green;
+}
+.pink{
+    color:rgb(46, 228, 252);
 }
 
 .form-head {
@@ -40,16 +56,10 @@ font-weight: 600;
     background: transparent;
     padding: 5px;
     border-radius: 10px;
-  //  margin-right: 400px;
-    box-shadow:  5px 15px #00000029;
-     border: 2px solid #e4e4e4;
-     
+    border: 2px solid #e4e4e4;
+    box-shadow: 2px -0px 20px whitesmoke;
     border-radius: 6px;
     opacity: 1;
-   
-    
-
-
 }
 
 .form-box {
@@ -62,7 +72,7 @@ font-weight: 600;
 }
 
 .toggle-btn {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 10px 30px;
     cursor: pointer;
     margin-left: 55px;
@@ -70,6 +80,11 @@ font-weight: 600;
     background-color: transparent;
     outline: none;
     position: relative;
+    a{
+       // border: 1px solid red;
+        color: white;
+        text-decoration: none;
+    }
 
 }
 .online {
@@ -94,7 +109,7 @@ font-weight: 600;
     height: 245px;
 }
 .toggle-btna {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 10px 30px;
     cursor: pointer;
     margin-left: 70px;
@@ -102,7 +117,12 @@ font-weight: 600;
     background-color: transparent;
     outline: none;
     position: relative;
-    
+    a{
+        // border: 1px solid red;
+         color: white;
+         text-decoration: none;
+     }
+ 
 
 }
 

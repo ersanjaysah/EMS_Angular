@@ -1,16 +1,20 @@
 .component{
+    // border: 1px solid red;
     height: 100%;
     width: 100%;
-    background-color: #807F7F;
+    
     background-position: center;
     background-size: cover;
     position: absolute;
+    background-image: url("../../../assets/background5.png");
+    position: absolute;
 }
 .form-head{
+     //border: 1px solid red;
     width: 370px;
-    height: 405px;
+    height: 453px;
     position: relative;
-    margin: 6% auto;
+    margin: 4% auto;
     background: #fff;
     padding: 5px;
     border-radius: 10px;
@@ -20,7 +24,20 @@
     border-radius: 6px;
     opacity: 1;
 }
+h1{
+    //border: 1px solid red;
+    display: flex;
+    justify-content:center;
+    background-color: greenyellow;
+    padding-left: 5px;
+    height: 40px;
+    font-size: 25px;
+    line-height: 39px;
+    letter-spacing: 0.131em;
+    font-weight: 600;
+}
 .form-box{
+    // border: 1px solid red;
     width: 220px;
     margin: 35px auto;
     position: relative;
@@ -104,7 +121,14 @@ mat-radio-button{
     color: white;
     font-size: 15px;
 }
+.submit-btn a{
+   // border: 1px solid blue;
+    color: white;
+    text-decoration: none;
+    
+}
 .container{
+    
     height: 100%;
     width: 100%;
     background-color: #BFBDBD;
@@ -116,8 +140,8 @@ mat-radio-button{
 .header{
    // border: 1px solid red;
     width: 300px;
-    height: 350px;
-    margin-top: -477px;
+    height: 380px;
+    margin-top: -490px;
     margin-left: 340px;
     background: #F5F5F5;
     padding: 5px;
@@ -152,6 +176,7 @@ mat-radio-button{
     margin-top: 38px;
 }
 .facebook-btn{
+    //border: 1px solid red;
 top: 507px;
 left: 727px;
 width: 140px;
