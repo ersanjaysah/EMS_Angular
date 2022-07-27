@@ -11,6 +11,8 @@ export class AdminService {
   BaseUrl=environment.baseUrl;  
   token:any;
   constructor(private httpService:HttpService) { }
+
+
   Register(reqdata:any){
     let header={
       Headers:new HttpHeaders({
@@ -27,17 +29,17 @@ export class AdminService {
         
       })
     }
-    return this.httpService.postService(this.BaseUrl+`Admin/AdminLogin/${reqdata.email}/${reqdata.password}`,{},false,header)
+    return this.httpService.postService(this.BaseUrl+`Admin/AdminLogin`,reqdata,false,header)
   }
 
-  getalldetails(){
+  getallEmployee(){
     let header={
       Headers:new HttpHeaders({
         'Content-type': 'application/json',
-        'Authorization': 'Bearer ' +this.token
+       // 'Authorization': 'Bearer ' +this.token
       })
     }
-    return this.httpService.getService(this.BaseUrl+'',true,header)
+    return this.httpService.getService(this.BaseUrl+'Employee/GetAllEmployee',true,header)
   }
   
 }

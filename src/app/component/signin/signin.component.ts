@@ -13,9 +13,9 @@ export class SigninComponent implements OnInit {
   loginForm!: FormGroup;
   submitted=false;
   token: any;
-  // Users:any
+  
   constructor(private formBuilder: FormBuilder,private admin:AdminService,private router:Router,private activeRoute:ActivatedRoute) { 
-   // this.token = localStorage.getItem("token")
+   this.token = localStorage.getItem("token")
   }
  
   
@@ -42,7 +42,7 @@ export class SigninComponent implements OnInit {
       }
       this.admin.login(reqData).subscribe((result:any)=>{
         console.log(result);
-        // localStorage.setItem('token',result.token); 
+        localStorage.setItem('token',result.data.token); 
         this.router.navigateByUrl('/dashboard')  
       
       })
