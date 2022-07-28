@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Add New Employee</h2>
+<div mat-dialog-contant>
+   <form [formGroup]="registerForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Fullname</mat-label>
+        <input formControlName="Fullname" matInput placeholder="Fullname">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="Email" matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="Password" matInput placeholder="Password">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Mobilenumber</mat-label>
+        <input formControlName="Mobilenumber" matInput type="number" placeholder="Mobile Number">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input formControlName="Address" matInput placeholder="Address">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="Gender" placeholder="Gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Position</mat-label>
+        <mat-select formControlName="Position" placeholder="Position">
+            <mat-option value="Sr.Manager"> Sr.Manager</mat-option>
+            <mat-option value="Jr.Manager">Jr.Manager</mat-option>
+            <mat-option value="sr.Developer">sr.Developer</mat-option>
+            <mat-option value="Jr.Developer">Jr.Developer</mat-option>
+            <mat-option value="Accountant">Accountant</mat-option>
+            <mat-option value="Assistant">Assistant</mat-option>
+            <mat-option value="sr.operator">sr.operator</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Salary</mat-label>
+        <input formControlName="Salary" matInput type="number" placeholder="Salary">
+    </mat-form-field>
+   </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+</div>

@@ -1,41 +1,46 @@
 <div class="component">
-    <div class="form-head">
-      <div class="form-box">
-        <div class="control">
-
-            <span class="blue">A</span>
-            <span class="red">D</span>
-            <span class="orange">M</span>
-            <span class="green">I</span>
-            <span class="pink">N</span>
-        </div>
-        <div class="log">
-            <p>Login</p>
-        </div>
-        
+  <h1>Employee Management System</h1>
+  <div class="form-head">
+    <div class="form-box">
+      <div class="control">
+        <span class="blue">A</span>
+        <span class="red">D</span>
+        <span class="orange">M</span>
+        <span class="green">I</span>
+        <span class="pink">N</span>
       </div>
-      <form id="login" class="input-group">
-         <input type="text" class="input-field" placeholder="Email" formControlName="email" required>
-         <input type="password" class="input-field" placeholder="Password" formControlName="password" required>
-         <button type="submit" class="submit-btn">Log In</button>
-         <h2><strong>OR</strong></h2>
-         
+      <div class="log">
+        <p>Login</p>
+      </div>
+
+    </div>
+    <form id="login" class="input-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input type="text" class="input-field" placeholder="Email" formControlName="email">
+      <input type="password" class="input-field" placeholder="Password" formControlName="password">
+      <button type="submit" class="submit-btn">Log In</button>
+      <button class="submit-btn">
+        <a routerLink="/home">Back</a>
+      </button>
+      <h2><strong>OR</strong></h2>
+
       <div class="choose-btn" fxLayout="row" fxLayoutAlign="center center" style="margin-right: 200px;">
         <div>
-          <button type="submit" class="facebook-btn"onclick="location.href='https://www.facebook.com/';">Facebook</button>
+          <button type="submit" class="facebook-btn"
+            onclick="location.href='https://www.facebook.com/';">Facebook</button>
         </div>
         <div>
-          <button type="submit" class="google"onclick="location.href='https://accounts.google.com/signin/v2/identifier?flowEntry=AddSession&hl=en&flowName=GlifWebSignIn';">Google</button>
+          <button type="submit" class="google"
+            onclick="location.href='https://accounts.google.com/signin/v2/identifier?flowEntry=AddSession&hl=en&flowName=GlifWebSignIn';">Google</button>
         </div>
       </div>
-      </form>
+    </form>
+  </div>
+  <div class="containter">
+    <div class="header">
+      <div class="img-box">
+        <img class="online" src="../../../assets/admin1.jpg">
+        <span class="text-online"><strong>Welcome To Admin Page</strong></span>
+      </div>
     </div>
-    <div class="containter">
-      <div class="header">
-        <div class="img-box">
-          <img class="online" src="../../../assets/admin1.jpg">       
-          <span class="text-online"><strong>Welcome To Admin Page</strong></span>
-        </div>
-       </div>
-      </div>
+  </div>
 </div>
