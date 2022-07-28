@@ -13,7 +13,8 @@ const routes: Routes = [
   {path:'signin',component:SigninComponent},
   {path:'emplogin',component:EmpLoginComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'update',component:UpdateComponent}
+
+  {path:'update',component:UpdateComponent},
 
 
 ];

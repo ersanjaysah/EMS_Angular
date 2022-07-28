@@ -13,7 +13,6 @@ export class DialogComponent implements OnInit {
   actionBtn: string = "Save";
   empId: any;
 
-
   constructor(private formBuilder: FormBuilder, private admin: AdminService,
     @Inject(MAT_DIALOG_DATA) public updateData: any,
     private dialogRef: MatDialogRef<DialogComponent>) { }
@@ -28,8 +27,6 @@ export class DialogComponent implements OnInit {
       Gender: ['', Validators.required],
       Position: ['', Validators.required],
       Salary: ['', Validators.required],
-
-
     });
     console.log(this.updateData);
 
@@ -66,7 +63,6 @@ export class DialogComponent implements OnInit {
     else {
       this.updateEmployee()
     }
-
   }
   updateEmployee() {
     this.admin.updateEmployee(this.registerForm.value, this.updateData.empId).subscribe({
@@ -74,7 +70,6 @@ export class DialogComponent implements OnInit {
         alert("Employee record updated Successfully!!!");
         this.registerForm.reset();
         this.dialogRef.close("update");
-
       },
       error: () => {
         alert("Error While updating the Employee record");

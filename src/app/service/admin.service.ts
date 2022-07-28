@@ -13,14 +13,13 @@ export class AdminService {
   empId:any;
   constructor(private httpService:HttpService) { }
 
-
   Register(reqdata:any){
     let header={
       Headers:new HttpHeaders({
         'Content-type':'application/json'
       })
     }
-    return this.httpService.postService(this.BaseUrl+'Employee/Registration',reqdata,false,header)
+    return this.httpService.postService(this.BaseUrl+'Employee/Registration',reqdata,false,header);
   }
 
   login(reqdata:any){
@@ -30,7 +29,7 @@ export class AdminService {
         
       })
     }
-    return this.httpService.postService(this.BaseUrl+`Admin/AdminLogin`,reqdata,false,header)
+    return this.httpService.postService(this.BaseUrl+`Admin/AdminLogin`,reqdata,false,header);
   }
 
   getallEmployee(){
@@ -40,7 +39,7 @@ export class AdminService {
        // 'Authorization': 'Bearer ' +this.token
       })
     }
-    return this.httpService.getService(this.BaseUrl+'Employee/GetAllEmployee',true,header)
+    return this.httpService.getService(this.BaseUrl+'Employee/GetAllEmployee',true,header);
   }
 
   updateEmployee(data:any,EmpId:any){

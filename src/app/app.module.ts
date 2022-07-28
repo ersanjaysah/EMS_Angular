@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {EmpLoginComponent } from './component/emp-login/emp-login.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -18,13 +17,14 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-import { SigninComponent } from './component/signin/signin.component';
-import { HomeComponent } from './component/home/home.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { UpdateComponent } from './component/update/update.component';
-import { DialogComponent } from './component/dialog/dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { HomeComponent } from './component/home/home.component';
+import { SigninComponent } from './component/signin/signin.component';
+import {EmpLoginComponent } from './component/emp-login/emp-login.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { DialogComponent } from './component/dialog/dialog.component';
+import { UpdateComponent } from './component/update/update.component';
 
 
 

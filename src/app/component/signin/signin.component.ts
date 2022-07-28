@@ -17,21 +17,14 @@ export class SigninComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private admin:AdminService,private router:Router,private activeRoute:ActivatedRoute) { 
    this.token = localStorage.getItem("token")
   }
- 
-  
-
   ngOnInit(): void {
-   // this.token=this.activeRoute.snapshot.paramMap.get('token')
-    this.loginForm = this.formBuilder.group({
+   this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       
   });
-  //localStorage.setItem('SeesionUser',this.Users) 
-  
-   }
- 
-   onSubmit()
+  }
+    onSubmit()
   {
     this.submitted=true;
     if(this.loginForm.valid){
@@ -44,17 +37,11 @@ export class SigninComponent implements OnInit {
         console.log(result);
         localStorage.setItem('token',result.data.token); 
         this.router.navigateByUrl('/dashboard')  
-      
       })
       
     }
     else{
       console.log("invalid data",this.loginForm.value);
     }
-    // this.snackBar.open('Login Successfully..!!!', '..', {
-    //   duration: 3000,
-    // })
-
-    
   }
 }
