@@ -39,6 +39,7 @@
             <mat-option value="Assistant">Assistant</mat-option>
             <mat-option value="sr.operator">sr.operator</mat-option>
         </mat-select>
+
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Salary</mat-label>
@@ -48,5 +49,5 @@
 </div>
 <div mat-dialog-action [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEmployee()">Save</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
 </div>

@@ -8,7 +8,6 @@
   table {
     width: 100%;
   }
-  
   .mat-form-field {
     font-size: 15px;
     width: 100%;
@@ -25,11 +24,18 @@
     
   }
   .editbtn{
-    background-color:greenyellow;
+    background-color:rgb(21, 152, 212);
   }
   .deletebtn{
-    background-color: red;
+    background-color:red;
+    
   }
+  .headbtn td{
+   // border: 1px solid green;
+    border: none;
+ }
+ 
+  
  
   
 
