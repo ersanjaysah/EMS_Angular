@@ -14,15 +14,13 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  title='Employee Table'
-  displayedColumns: string[] = ['EmpId', 'Fullname', 'Email', 'Password','Mobilenumber','Address','Gender','Position','Salary','Action'];
-  dataSource!:MatTableDataSource<any>;
+   dataSource:any=[];
   
 
-  @ViewChild(MatPaginator) paginator!:MatPaginator;
-  @ViewChild(MatSort) sort!:MatSort;
+  // @ViewChild(MatPaginator) paginator!:MatPaginator;
+  // @ViewChild(MatSort) sort!:MatSort;
 
-constructor(private dialog:MatDialog,private admin:AdminService) { }
+constructor(private dialog:MatDialog, private admin:AdminService) { }
 
 ngOnInit(): void {
     this.getAllEmployee();
@@ -35,21 +33,31 @@ ngOnInit(): void {
     });
   }
   getAllEmployee(){
-    this.admin.getalldetails().subscribe({
-      next:(result)=>{
-        // this.dataSource=new MatTableDataSource(result);
-         this.dataSource.paginator=this.paginator;
-         this.dataSource.sort=this.sort;
-      },
-     
-      
+    this.admin.getallEmployee().subscribe(
+      (response:any)=>{
+        console.log(response);
+       this.dataSource = response.response;
+       console.log(this.dataSource);
+      })
+  }
+
+
+  editEmployee(element: any){
+    this.dialog.open(DialogComponent,{
+      width:'34%',
+      height:'75%',
+      data:element
     })
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  //   if(this.dataSource.paginator){
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
  
   
 }
