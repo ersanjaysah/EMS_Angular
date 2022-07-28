@@ -17,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { SigninComponent } from './component/signin/signin.component';
 import { HomeComponent } from './component/home/home.component';
@@ -44,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,MatInputModule,MatCheckboxModule,MatDialogModule,
     ReactiveFormsModule,MatToolbarModule,MatIconModule,MatButtonModule,
     MatSelectModule,FormsModule,HttpClientModule,MatTableModule,MatPaginatorModule,
-    MatSortModule,
+    MatSortModule,MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

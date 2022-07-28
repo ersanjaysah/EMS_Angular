@@ -8,6 +8,7 @@
 </mat-toolbar>
 
 <div class="container">
+
   <div class="table">
     <table class="table1">
       <tr>
@@ -20,23 +21,25 @@
         <th>Gender</th>
         <th>Position</th>
         <th>Salary</th>
-        
+
       </tr>
       <tr *ngFor="let arr of dataSource">
         <td>{{arr.empId}}</td>
         <td>{{arr.fullName}}</td>
         <td>{{arr.email}}</td>
         <td> {{arr.password}}</td>
-        <td >{{arr.mobileNumber}}</td>
-        <td >{{arr.address}}</td>
-        <td >{{arr.gender}}</td>
-        <td >{{arr.position}}</td>
-        <td >{{arr.salary}}</td>
+        <td>{{arr.mobileNumber}}</td>
+        <td>{{arr.address}}</td>
+        <td>{{arr.gender}}</td>
+        <td>{{arr.position}}</td>
+        <td>{{arr.salary}}</td>
         <div class="headbtn">
-        <td><button class="editbtn" routerLink="/update">Update</button></td>
-        <td><button class="deletebtn">Delete</button></td>
-      </div>
+          <td><button class="editbtn" mat-icon-button (click)="updateEmployee(arr)"> <mat-icon>update</mat-icon> </button></td>
+          <td><button class="deletebtn" mat-icon-button (click)="deleteEmployee(arr.empId)"><mat-icon>delete</mat-icon></button></td>
+        </div>
       </tr>
     </table>
+
+
   </div>
 </div>

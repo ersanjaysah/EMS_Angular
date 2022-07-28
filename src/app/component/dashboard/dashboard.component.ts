@@ -17,8 +17,8 @@ export class DashboardComponent implements OnInit {
    dataSource:any=[];
   
 
-  // @ViewChild(MatPaginator) paginator!:MatPaginator;
-  // @ViewChild(MatSort) sort!:MatSort;
+   @ViewChild(MatPaginator) paginator!:MatPaginator;
+   @ViewChild(MatSort) sort!:MatSort;
 
 constructor(private dialog:MatDialog, private admin:AdminService) { }
 
@@ -30,7 +30,11 @@ ngOnInit(): void {
     this.dialog.open(DialogComponent, {
     width:'34%',
     height:'75%'
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val ==='Save'){
+        this.getAllEmployee();
+      }
+    })
   }
   getAllEmployee(){
     this.admin.getallEmployee().subscribe(
@@ -38,28 +42,36 @@ ngOnInit(): void {
         console.log(response);
        this.dataSource = response.response;
        console.log(this.dataSource);
+       this.dataSource.paginator=this.paginator;
+       this.dataSource.sort=this.sort;
       })
   }
 
 
-  editEmployee(element: any){
+  updateEmployee(arr:any){
     this.dialog.open(DialogComponent,{
       width:'34%',
       height:'75%',
-      data:element
+      data:arr,
+    }).afterClosed().subscribe(val=>{
+      if(val==='update'){
+        this.getAllEmployee();
+      }
     })
   }
 
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
 
-  //   if(this.dataSource.paginator){
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
- 
-  
+  deleteEmployee(empId:any){
+    this.admin.deleteEmployee(empId).subscribe({
+      next:(res)=>{
+        alert("Employee deleted successfully");
+        this.getAllEmployee();
+      },
+      error: () => {
+        alert("Error While deleting the Employee record");
+      }
+    })
+  }
 }
  
   

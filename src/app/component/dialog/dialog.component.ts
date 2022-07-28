@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder,Validator, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/service/admin.service';
-import {MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -10,80 +10,75 @@ import {MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
   registerForm !: FormGroup;
-  actionBtn:string="Save";
+  actionBtn: string = "Save";
+  empId: any;
 
-  constructor(private formBuilder:FormBuilder,private admin:AdminService,
-    @Inject(MAT_DIALOG_DATA) public editData:any,
-     private dialogRef:MatDialogRef<DialogComponent>) { }
+
+  constructor(private formBuilder: FormBuilder, private admin: AdminService,
+    @Inject(MAT_DIALOG_DATA) public updateData: any,
+    private dialogRef: MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
-    this.registerForm=this.formBuilder.group({
-     Fullname :['',Validators.required],
-     Email:['',Validators.required],
-     Password :['',Validators.required],
-     Mobilenumber:['',Validators.required],
-     Address :['',Validators.required],
-     Gender:['',Validators.required],
-     Position :['',Validators.required],
-     Salary:['',Validators.required],
+    this.registerForm = this.formBuilder.group({
+      Fullname: ['', Validators.required],
+      Email: ['', Validators.required],
+      Password: ['', Validators.required],
+      Mobilenumber: ['', Validators.required],
+      Address: ['', Validators.required],
+      Gender: ['', Validators.required],
+      Position: ['', Validators.required],
+      Salary: ['', Validators.required],
 
 
     });
-    
-    // if(this.editData){
-    //   this.actionBtn="Update";
-    //   this.registerForm.controls['Fullname'].setValue(this.editData.Fullname);
-    //   this.registerForm.controls['Email'].setValue(this.editData.Email);
-    //   this.registerForm.controls['Password'].setValue(this.editData.Password);
-    //   this.registerForm.controls['Mobilenumber'].setValue(this.editData.Mobilenumber);
-    //   this.registerForm.controls['Address'].setValue(this.editData.Address);
-    //   this.registerForm.controls['Gender'].setValue(this.editData.Gender);
-    //   this.registerForm.controls['Position'].setValue(this.editData.Position);
-    //   this.registerForm.controls['Salary'].setValue(this.editData.Salary);
-    // }
-  }
+    console.log(this.updateData);
 
-  addEmployee(){
-    console.log(this.registerForm.value);
-    if(this.registerForm.valid){
-      this.admin.Register(this.registerForm.value)
-      .subscribe({
-        next:(res)=>{
-          alert("Employee Added Successfully");
-          this.registerForm.reset();
-          this.dialogRef.close("save");
-        },
-        error:()=>{
-          alert("Error While Adding the Employee")
-        }
-      })
+    if (this.updateData) {
+      this.actionBtn = "update";
+      this.registerForm.controls['Fullname'].setValue(this.updateData.fullName);
+      this.registerForm.controls['Email'].setValue(this.updateData.email);
+      this.registerForm.controls['Password'].setValue(this.updateData.password);
+      this.registerForm.controls['Mobilenumber'].setValue(this.updateData.mobileNumber);
+      this.registerForm.controls['Address'].setValue(this.updateData.address);
+      this.registerForm.controls['Gender'].setValue(this.updateData.gender);
+      this.registerForm.controls['Position'].setValue(this.updateData.position);
+      this.registerForm.controls['Salary'].setValue(this.updateData.salary);
     }
   }
 
-  // onSubmit(){
-  //   console.log(this.registerForm.value);
-  //   if(this.registerForm.valid){
-  //     console.log("Data Inserted Successfully", this.registerForm.value);
-  //     let reqData={
-  //       fullName:this.registerForm.value.Fullname,
-  //       email:this.registerForm.value.Email,
-  //       password:this.registerForm.value.Password,
-  //       mobileNumber:this.registerForm.value.Mobilenumber,
-  //       address:this.registerForm.value.Address,
-  //       gender:this.registerForm.value.Gender,
-  //       position:this.registerForm.value.Position,
-  //       salary:this.registerForm.value.Salary,
-  //     }
-  //    // this.admin.Register(reqData).subscribe((result:any)=>{console.log(result);})
-  //     this.admin.Register(reqData).subscribe({next:(res)=>{alert('Employee Added successfully');
-  //     this.registerForm.reset();
-  //     this.dialogRef.close('save');},})
-     
-  //   }
-  //   else
-  //   {
-  //     console.log("invalid data",this.registerForm.value);
-  //   }
-  // }
+  addEmployee() {
+    console.log(this.registerForm.value);
+    if (!this.updateData) {
+      if (this.registerForm.valid) {
+        this.admin.Register(this.registerForm.value)
+          .subscribe({
+            next: (res) => {
+              alert("Employee record Added Successfully");
+              this.registerForm.reset();
+              this.dialogRef.close("save");
+            },
+            error: () => {
+              alert("Error While Adding the Employee record");
+            }
+          })
+      }
+    }
+    else {
+      this.updateEmployee()
+    }
 
+  }
+  updateEmployee() {
+    this.admin.updateEmployee(this.registerForm.value, this.updateData.empId).subscribe({
+      next: (res) => {
+        alert("Employee record updated Successfully!!!");
+        this.registerForm.reset();
+        this.dialogRef.close("update");
+
+      },
+      error: () => {
+        alert("Error While updating the Employee record");
+      }
+    })
+  }
 }
