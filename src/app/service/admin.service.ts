@@ -11,15 +11,16 @@ export class AdminService {
   BaseUrl=environment.baseUrl;  
   token:any;
   empId:any;
-  constructor(private httpService:HttpService) { }
-
+  constructor(private httpService:HttpService) { this.token = localStorage.getItem('token');}
+  
   Register(reqdata:any){
     let header={
-      Headers:new HttpHeaders({
-        'Content-type':'application/json'
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpService.postService(this.BaseUrl+'Employee/Registration',reqdata,false,header);
+    return this.httpService.postService(this.BaseUrl+'Employee/Registration',reqdata,true,header);
   }
 
   login(reqdata:any){
@@ -34,36 +35,59 @@ export class AdminService {
 
   getallEmployee(){
     let header={
-      Headers:new HttpHeaders({
+      headers:new HttpHeaders({
         'Content-type': 'application/json',
-       // 'Authorization': 'Bearer ' +this.token
+        'Authorization': 'Bearer '+this.token
       })
     }
     return this.httpService.getService(this.BaseUrl+'Employee/GetAllEmployee',true,header);
   }
 
   updateEmployee(data:any,EmpId:any){
-    //console.log(this.token);
+    console.log(this.token);
     console.log(data,EmpId);
     let header={
-      Headers:new HttpHeaders({
+      headers:new HttpHeaders({
         'Content-type': 'application/json',
-       // 'Authorization': 'Bearer ' +this.token
+        'Authorization': 'Bearer ' +this.token
       })
     }
     return this.httpService.putService(this.BaseUrl+`Employee/UpdateEmployee/${EmpId}`,data, true,header);
   }
 
   deleteEmployee(EmpId:any){
-    //console.log(this.token);
+    console.log(this.token);
     console.log(EmpId);
     let header={
-      Headers:new HttpHeaders({
+      headers:new HttpHeaders({
         'Content-type': 'application/json',
-       // 'Authorization': 'Bearer ' +this.token
+        'Authorization': 'Bearer ' +this.token
       }),
     };
     return this.httpService.deleteService(this.BaseUrl+`Employee/DeleteEmployee/${EmpId}`, true,header);
   }
-  
+
+  // employeeSignin(reqdata: any) {
+  //   let header = {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json',
+  //     })
+  //   }
+  //   console.log(reqdata);
+  //   return this.httpService.postService(this.BaseUrl+`Employee/EmployeeLogin`, reqdata, false, header)
+  // }
+
+  // getemployee() {
+  //   console.log(this.token);
+    
+    
+  //   let header = {
+  //     Headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'Authorization' : 'Bearer '+this.token,
+  //     }),
+  //   };
+  //   return this.httpService.getService(this.BaseUrl+`Employee/EmployeeDetails`,true,header);
+  // }
 }
+

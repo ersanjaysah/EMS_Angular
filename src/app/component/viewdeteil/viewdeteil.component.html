@@ -1,0 +1,37 @@
+<div class="divfirst">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon routerLink="/home">home</mat-icon>
+    </button>
+    <span>Employee Management System</span>
+    <button class="btn" mat-raised-button routerLink="/emplogin">Back</button>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+
+
+  <mat-accordion>
+    <div class="div" fxLayout="row" fxLayoutAlign="center center">
+      <mat-expansion-panel hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            EMPLOYEE DETAIL'S
+          </mat-panel-title>
+          <mat-panel-description>
+            {{panelOpenState ? '' : ''}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>EmpId : {{employeeArray.EmpId}}</p>
+        <p>FullName : {{employeeArray.fullName}}</p>
+        <p>Email : {{employeeArray.email}}</p>
+        <p>Password : {{employeeArray.password}}</p>
+        <p>Mobile Number : {{employeeArray.mobileNumber}}</p>
+        <p>Address : {{employeeArray.address}}</p>
+        <p>Gender : {{employeeArray.gender}}</p>
+        <p>Position : {{employeeArray.position}}</p>
+        <p>Salary : {{employeeArray.salary}}</p>
+        
+
+      </mat-expansion-panel>
+    </div>
+  </mat-accordion>
+</div>
