@@ -28,11 +28,13 @@ export class EmployeeService {
     
     
     let header = {
-      Headers: new HttpHeaders({
+      headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.emptoken
       }),
+      
     };
+    console.log(header);
     return this.httpService.getService(this.BaseUrl+`Employee/EmployeeDetails`,true,header);
   }
 }

@@ -40,6 +40,7 @@ export class AdminService {
         'Authorization': 'Bearer '+this.token
       })
     }
+    console.log(header);
     return this.httpService.getService(this.BaseUrl+'Employee/GetAllEmployee',true,header);
   }
 
