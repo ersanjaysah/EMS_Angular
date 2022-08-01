@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/service/admin.service';
 
@@ -14,7 +15,7 @@ export class SigninComponent implements OnInit {
   submitted=false;
   token: any;
   
-  constructor(private formBuilder: FormBuilder,private admin:AdminService,private router:Router,private activeRoute:ActivatedRoute) { 
+  constructor(private formBuilder: FormBuilder,private admin:AdminService,private router:Router,private activeRoute:ActivatedRoute,private snackBar:MatSnackBar) { 
    this.token = localStorage.getItem("token")
   }
   ngOnInit(): void {
@@ -36,7 +37,10 @@ export class SigninComponent implements OnInit {
       this.admin.login(reqData).subscribe((result:any)=>{
         console.log(result);
         localStorage.setItem('token',result.data.token); 
-        this.router.navigateByUrl('/dashboard')  
+        this.router.navigateByUrl('/dashboard') 
+        this.snackBar.open('Login Successfully..!!!', '..', {
+          duration: 3000,
+        }) 
       })
       
     }

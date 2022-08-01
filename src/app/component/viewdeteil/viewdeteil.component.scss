@@ -1,0 +1,81 @@
+.divfirst{
+ // border: 1px solid red;
+  background-color: grey;
+  height: 100%;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+ 
+  .btn {
+     //border: 2px solid yellow;
+    width: 110px;
+    height: 40px;
+    background: lightcoral;
+    border: none;
+    margin-top: 2px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+   margin-left: 70%;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #ff7200;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+mat-expansion-panel {
+  // border: 2px solid red;
+  width: 50%;
+ 
+}
+mat-expansion-panel-header{
+  font-size: 22px;
+line-height: 33px;
+letter-spacing: 0.031em;
+font-weight: 600;
+}
+ 
+.box {
+  // border: 1px solid black;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+
+}
+
+mat-panel-title {
+  // border: 1px solid red;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 43px;
+  letter-spacing: 0.061em;
+
+}
+
+p {
+  // border: 1px solid red;
+  font-size: 24px;
+  line-height: 39px;
+  letter-spacing: 0.012em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+

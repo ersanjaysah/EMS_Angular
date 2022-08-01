@@ -1,7 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit,EventEmitter,Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/service/admin.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-dialog',
@@ -16,6 +17,7 @@ export class DialogComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private admin: AdminService,
     @Inject(MAT_DIALOG_DATA) public updateData: any,
     private dialogRef: MatDialogRef<DialogComponent>) { }
+  
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -28,6 +30,7 @@ export class DialogComponent implements OnInit {
       Position: ['', Validators.required],
       Salary: ['', Validators.required],
     });
+    
     console.log(this.updateData);
 
     if (this.updateData) {
@@ -41,6 +44,8 @@ export class DialogComponent implements OnInit {
       this.registerForm.controls['Position'].setValue(this.updateData.position);
       this.registerForm.controls['Salary'].setValue(this.updateData.salary);
     }
+
+    
   }
 
   addEmployee() {
@@ -53,6 +58,7 @@ export class DialogComponent implements OnInit {
               alert("Employee record Added Successfully");
               this.registerForm.reset();
               this.dialogRef.close("save");
+              
             },
             error: () => {
               alert("Error While Adding the Employee record");
@@ -76,4 +82,6 @@ export class DialogComponent implements OnInit {
       }
     })
   }
+
+  
 }

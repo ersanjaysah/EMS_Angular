@@ -6,6 +6,7 @@ import { HomeComponent } from './component/home/home.component';
 
 import { SigninComponent } from './component/signin/signin.component';
 import { UpdateComponent } from './component/update/update.component';
+import { ViewdeteilComponent } from './component/viewdeteil/viewdeteil.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'signin',component:SigninComponent},
   {path:'emplogin',component:EmpLoginComponent},
   {path:'dashboard',component:DashboardComponent},
+  {path:'viewdetail',component:ViewdeteilComponent},
 
   {path:'update',component:UpdateComponent},
 

@@ -17,7 +17,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HomeComponent } from './component/home/home.component';
 import { SigninComponent } from './component/signin/signin.component';
@@ -25,6 +27,7 @@ import {EmpLoginComponent } from './component/emp-login/emp-login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DialogComponent } from './component/dialog/dialog.component';
 import { UpdateComponent } from './component/update/update.component';
+import { ViewdeteilComponent } from './component/viewdeteil/viewdeteil.component';
 
 
 
@@ -36,7 +39,8 @@ import { UpdateComponent } from './component/update/update.component';
     EmpLoginComponent,
     DashboardComponent,
     UpdateComponent,
-    DialogComponent
+    DialogComponent,
+    ViewdeteilComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,7 @@ import { UpdateComponent } from './component/update/update.component';
     MatFormFieldModule,MatInputModule,MatCheckboxModule,MatDialogModule,
     ReactiveFormsModule,MatToolbarModule,MatIconModule,MatButtonModule,
     MatSelectModule,FormsModule,HttpClientModule,MatTableModule,MatPaginatorModule,
-    MatSortModule,MatSnackBarModule
+    MatSortModule,MatSnackBarModule,MatExpansionModule,FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
