@@ -7,8 +7,6 @@
     <button class="btn" mat-raised-button routerLink="/emplogin">Back</button>
     <span class="example-spacer"></span>
   </mat-toolbar>
-
-
   <mat-accordion>
     <div class="div" fxLayout="row" fxLayoutAlign="center center">
       <mat-expansion-panel hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -20,7 +18,7 @@
             {{panelOpenState ? '' : ''}}
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>EmpId : {{employeeArray.EmpId}}</p>
+        <p>EmpId : {{employeeArray.empId}}</p>
         <p>FullName : {{employeeArray.fullName}}</p>
         <p>Email : {{employeeArray.email}}</p>
         <p>Password : {{employeeArray.password}}</p>
@@ -29,8 +27,6 @@
         <p>Gender : {{employeeArray.gender}}</p>
         <p>Position : {{employeeArray.position}}</p>
         <p>Salary : {{employeeArray.salary}}</p>
-        
-
       </mat-expansion-panel>
     </div>
   </mat-accordion>
